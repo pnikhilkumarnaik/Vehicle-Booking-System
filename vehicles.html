@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <title>Vehicles - RideMe</title>
+   
+</head>
+<body class="vehicles-page">
+    <div class="wrapper">
+        <nav class="nav">
+            <div class="nav-logo">
+                <p>RIDEME.</p>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="index.html" class="link"><i class='bx bx-home'></i> Home</a></li>
+                    <li><a href="vehicles.html" class="link active"><i class='bx bx-edit'></i> Vehicles</a></li>
+                    <li><a href="bookings.html" class="link"><i class='bx bx-cog'></i> Bookings</a></li> 
+                    <li><a href="about.html" class="link"><i class='bx bx-info-circle'></i> About</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <main>
+            <div class="image-grid">
+                <!-- Image containers for vehicles -->
+                <div class="image-container">
+                    <img src="bike.jpg" alt="Bike" class="booking-image" onclick="redirectToBookingForm('Bike', 'bike.jpg')">
+                    <p>Bike</p>
+                </div>
+                <div class="image-container">
+                    <img src="ride.jpg" alt="Car" class="booking-image" onclick="redirectToBookingForm('Car', 'ride.jpg')">
+                    <p>Car</p>
+                </div>
+                <div class="image-container">
+                    <img src="bike.jpg" alt="Bike" class="booking-image" onclick="redirectToBookingForm('Bike', 'images/bike.jpg')">
+                    <p>Bike</p>
+                </div>
+                <div class="image-container">
+                    <img src="ride.jpg" alt="Car" class="booking-image" onclick="redirectToBookingForm('Car', 'images/ride.jpg')">
+                    <p>Car</p>
+                </div>
+                <div class="image-container">
+                    <img src="bike.jpg" alt="Bike" class="booking-image" onclick="redirectToBookingForm('Bike', 'images/bike.jpg')">
+                    <p>Bike</p>
+                </div>
+                <div class="image-container">
+                    <img src="ride.jpg" alt="Car" class="booking-image" onclick="redirectToBookingForm('Car', 'images/ride.jpg')">
+                    <p>Car</p>
+                </div>
+                <div class="image-container">
+                    <img src="bike.jpg" alt="Bike" class="booking-image" onclick="redirectToBookingForm('Bike', 'images/bike.jpg')">
+                    <p>Bike</p>
+                </div>
+                <div class="image-container">
+                    <img src="ride.jpg" alt="Car" class="booking-image" onclick="redirectToBookingForm('Car', 'images/ride.jpg')">
+                    <p>Car</p>
+                </div>
+                <div class="image-container">
+                    <img src="bike.jpg" alt="Bike" class="booking-image" onclick="redirectToBookingForm('Bike', 'images/bike.jpg')">
+                    <p>Bike</p>
+                </div>
+                <div class="image-container">
+                    <img src="ride.jpg" alt="Car" class="booking-image" onclick="redirectToBookingForm('Car', 'images/ride.jpg')">
+                    <p>Car</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function redirectToBookingForm(vehicle, image) {
+            // Redirect to the booking form and pass vehicle and image as URL parameters
+            window.location.href = `bookings.html?vehicle=${encodeURIComponent(vehicle)}&image=${encodeURIComponent(image)}`;
+        }
+    </script>
+</body>
+</html>

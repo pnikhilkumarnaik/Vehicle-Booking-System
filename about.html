@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body.about-page {
+            background: url("bike.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: rgba(222, 234, 237, 0.901);
+        }
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            min-height: 100vh;
+        }
+        .nav {
+            position: fixed;
+            top: 0;
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            height: 100px;
+            line-height: 100px;
+            background: linear-gradient(rgba(39, 39, 39, 0.8), rgba(39, 39, 39, 0.6));
+            z-index: 100;
+        }
+        .nav-logo p {
+            color: rgba(225, 231, 47, 0.997);
+            font-size: 25px;
+            font-weight: 600;
+        }
+        .nav-menu ul {
+            display: flex;
+        }
+        .nav-menu ul li {
+            list-style-type: none;
+        }
+        .nav-menu ul li .link {
+            text-decoration: none;
+            font-weight: 500;
+            color: #eee3e3;
+            padding-bottom: 15px;
+            margin: 0 25px;
+        }
+        .link:hover,
+        .active {
+            border-bottom: 2px solid #5bafeb;
+        }
+        main {
+            position: relative;
+            margin-top: 120px;
+            padding: 20px;
+            text-align: center;
+            color: #f0fdf5;
+        }
+        .quote {
+            position: relative;
+            color: #f1102e;
+            margin: 40px 0;
+        }
+        .quote h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+            color: #00ff5e;
+        }
+        .quote p {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #f7f304;
+        }
+        blockquote {
+            font-size: 24px;
+            font-style: italic;
+            margin: 0;
+            padding: 0;
+        }
+        .about-container,
+        .testimonials,
+        .faqs,
+        .contact,
+        .social-links {
+            padding: 20px;
+            margin: 40px 0;
+        }
+        .about-container h2,
+        .testimonials h2,
+        .faqs h2,
+        .contact h2,
+        .social-links h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: #00ff0d;
+        }
+        .testimonials blockquote {
+            font-size: 20px;
+            margin: 10px 0;
+            color: rgb(217, 210, 198);
+        }
+        .faqs h3 {
+            font-size: 20px;
+            margin: 10px 0;
+            color: rgb(188, 247, 28);
+        }
+        .social-links a {
+            margin: 0 10px;
+            color: #fd0606;
+            font-size: 24px;
+        }
+        .social-links a:hover {
+            color: #ff6600;
+        }
+        form {
+            margin-top: 20px;
+        }
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #6fbbf5;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        input[type="text"]:focus,
+        input[type="email"]:focus {
+            border-color: #ff6600;
+            outline: none;
+        }
+        button[type="submit"] {
+            background-color: #ff6600;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        button[type="submit"]:hover {
+            background-color: #e55b00;
+        }
+        @media (max-width: 768px) {
+            .quote h1 {
+                font-size: 28px;
+            }
+            .quote p,
+            .quote blockquote {
+                font-size: 18px;
+            }
+            main {
+                padding: 10px;
+            }
+        }
+        @media (max-width: 480px) {
+            .quote h1 {
+                font-size: 24px;
+            }
+            .quote p,
+            .quote blockquote {
+                font-size: 16px;
+            }
+        }
+    </style>
+    <title>RideMe - About Us</title>
+</head>
+<body class="about-page">
+    <div class="wrapper">
+        <nav class="nav">
+            <div class="nav-logo">
+                <p>RIDEME.</p>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="index.html" class="link active"><i class='bx bx-home'></i> Home</a></li>
+                    <li><a href="vehicles.html" class="link"><i class='bx bx-edit'></i> Vehicles</a></li>
+                    <li><a href="bookings.html" class="link"><i class='bx bx-cog'></i> Bookings</a></li>
+                    <li><a href="about.html" class="link"><i class='bx bx-info-circle'></i> About</a></li>
+                </ul>
+            </div>
+        </nav>
+        <main>
+            <div class="quote">
+                <h1>Welcome to RideMe</h1>
+                <p>Your one-stop solution for vehicle booking.</p>
+                <blockquote>"Adventure awaits, let's ride!"</blockquote>
+            </div>
+            <div class="about-container">
+                <h2>About Us</h2>
+                <p>RideMe is dedicated to providing an exceptional vehicle booking experience, offering a diverse range of vehicles to meet your travel needs. Whether you’re planning a short trip or a long journey, we’ve got you covered with our user-friendly platform.</p>
+            </div>
+            <div class="testimonials">
+                <h2>What Our Customers Say</h2>
+                <blockquote>
+                    <p>"RideMe made my travel experience effortless! The booking process was quick, and I found exactly what I needed."</p>
+                    <cite>- Alex J.</cite>
+                </blockquote>
+                <blockquote>
+                    <p>"Fantastic service and great selection of vehicles. Highly recommended!"</p>
+                    <cite>- Sarah L.</cite>
+                </blockquote>
+            </div>
+            <div class="faqs">
+                <h2>Frequently Asked Questions</h2>
+                <h3>How do I book a vehicle?</h3>
+                <p>You can book a vehicle by navigating to the 'Vehicles' page, selecting your preferred vehicle, and filling out the booking form.</p>
+                <h3>What payment methods do you accept?</h3>
+                <p>We accept various payment methods, including credit cards, debit cards, and digital wallets, ensuring secure transactions.</p>
+                <h3>Can I modify my booking?</h3>
+                <p>Yes, you can modify your booking details before the reservation date. Please contact our support team for assistance.</p>
+            </div>
+            <div class="contact">
+                <h2>Contact Us</h2>
+                <p>If you have any questions or need assistance, feel free to reach out:</p>
+                <p>Email: support@rideme.com</p>
+                <p>Phone: +1 (800) 123-4567</p>
+                <form action="send_message.php" method="POST">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+            <div class="social-links">
+                <h2>Follow Us</h2>
+                <p>Stay updated with our latest offers and news:</p>
+                <a href="https://facebook.com/rideme" target="_blank"><i class='bx bxl-facebook'></i></a>
+                <a href="https://twitter.com/rideme" target="_blank"><i class='bx bxl-twitter'></i></a>
+                <a href="https://instagram.com/rideme" target="_blank"><i class='bx bxl-instagram'></i></a>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

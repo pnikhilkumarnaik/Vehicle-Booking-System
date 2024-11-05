@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <title>RideMe</title>
+    <style>
+        /* Add styles for modal and backdrop */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0); /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+        }
+
+        .modal-content {
+            background-color: #fcf80c;
+            margin: 15% auto; /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 300px; /* Adjust width */
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .close {
+            color: #fe6969;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body class="booking-page"> <!-- Added class here -->
+    <div class="wrapper">
+        <nav class="nav">
+            <div class="nav-logo">
+                <p>RIDEME.</p>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="index.html" class="link"><i class='bx bx-home'></i> Home</a></li>
+                    <li><a href="vehicles.html" class="link active"><i class='bx bx-edit'></i> Vehicles</a></li>
+                    <li><a href="bookings.html" class="link"><i class='bx bx-cog'></i> Bookings</a></li>
+                    <li><a href="about.html" class="link"><i class='bx bx-info-circle'></i> About</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <main>
+            <div class="form-box">
+                <div class="booking-form-container">
+                    <header>
+                        <h2> Book Your Ride </h2>
+                        <p>Enter Your Details</p>
+                    </header>
+                    <form id="booking-form" action="success.html" method="GET" onsubmit="return validateForm()"> <!-- Added validation function -->
+                        <input type="hidden" id="vehicle" name="vehicle">
+                        <input type="hidden" id="image" name="image">
+                        
+                        <div class="input-box">
+                            <input type="text" id="name" name="name" placeholder="Name" required>
+                            <i class='bx bx-user'></i>
+                        </div>
+
+                        <div class="input-box">
+                            <input type="tel" id="phone" name="phone" placeholder="Phone" required>
+                            <i class='bx bx-phone'></i>
+                        </div>
+
+                        <div class="input-box">
+                            <input type="email" id="email" name="email" placeholder="Email (optional)">
+                            <i class='bx bx-envelope'></i>
+                        </div>
+
+                        <div class="input-box">
+                            <input type="text" id="pickup-drop" name="pickup-drop" placeholder="Pick-Up/Drop Place" required>
+                            <i class='bx bx-map'></i>
+                        </div>
+
+                        <div class="input-box">
+                            <input type="date" id="date" name="date" required>
+                            <i class='bx bx-calendar'></i>
+                        </div>
+
+                        <div class="input-box">
+                            <input type="time" id="time" name="time" required>
+                            <i class='bx bx-time'></i>
+                        </div>
+
+                        <div class="input-box">
+                            <button type="submit" class="submit">Confirm</button>
+                        </div>
+                    </form>
+                    <a href="vehicles.html" class="back-button"><i class='bx bx-arrow-back'></i> Back</a>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal Structure for Validation Error -->
+    <div id="errorModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Error!</h2>
+            <p>Please select a vehicle and fill in valid details.</p>
+        </div>
+    </div>
+
+    <script>
+        function setVehicleDetails() {
+            const urlParams = new URLSearchParams(window.location.search);
+            document.getElementById('vehicle').value = urlParams.get('vehicle');
+            document.getElementById('image').value = urlParams.get('image');
+        }
+
+        function validateForm() {
+            const vehicle = document.getElementById('vehicle').value;
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const pickupDrop = document.getElementById('pickup-drop').value;
+
+            // Check if vehicle is selected and other fields are valid
+            if (!vehicle || !name || !phone || !pickupDrop) {
+                showErrorModal();
+                return false; // Prevent form submission
+            }
+            return true; // Allow form submission
+        }
+
+        function showErrorModal() {
+            const modal = document.getElementById("errorModal");
+            modal.style.display = "block";
+        }
+
+        function closeModal() {
+            const modal = document.getElementById("errorModal");
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById("errorModal");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        window.onload = setVehicleDetails;
+    </script>
+</body>
+</html>

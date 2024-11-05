@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Booking Success - RideMe</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Navigation Styles */
+        .nav {
+            background-color: #007bff;
+            padding: 10px;
+        }
+
+        .nav-logo p {
+            color: white;
+            font-size: 24px;
+            margin: 0;
+        }
+
+        .nav-menu ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .nav-menu li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px; /* Adjust font size */
+        }
+
+        /* Success Container Styles */
+        .success-container {
+            background-color: rgb(146, 197, 242);
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            text-align: left; /* Align text to the left */
+        }
+
+        .booking-details img {
+            max-width: 200px;
+            max-height: 150px;
+            border-radius: 8px;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0); /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+        }
+
+        .modal-content {
+            background-color: #fcf80c;
+            margin: 10px; /* Reduced margin */
+            padding: 20px; /* Increased padding for better spacing */
+            border: 1px solid #888;
+            width: 400px; /* Adjusted width for narrower pop-up */
+            border-radius: 8px;
+            position: absolute; /* Change position to absolute */
+            right: 20px; /* Position from the right */
+            top: 100px; /* Position from the top */
+            text-align: left; /* Align text to the left */
+        }
+
+        /* Close Button Styles */
+        .close {
+            color: #000;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            margin: 10px; /* Margin for spacing */
+            cursor: pointer; /* Pointer cursor on hover */
+        }
+
+        .close:hover {
+            color: red; /* Change color on hover */
+        }
+
+        /* Modal Text Styles */
+        .modal-content h2 {
+            margin: 0 0 10px; /* Margin for spacing below heading */
+        }
+
+        .modal-content p {
+           
+            margin: 5px 0; /* Margin for spacing between paragraphs */
+        }
+        body.success-page {
+    background: url("me.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+    </style>
+</head>
+<body class="success-page">
+    <div class="wrapper">
+        <nav class="nav">
+            <div class="nav-logo">
+                <p>RIDEME.</p>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="index.html" class="link"><i class='bx bx-home'></i> Home</a></li>
+                    <li><a href="vehicles.html" class="link"><i class='bx bx-edit'></i> Vehicles</a></li>
+                    <li><a href="bookings.html" class="link"><i class='bx bx-cog'></i> Bookings</a></li>
+                    <li><a href="about.html" class="link"><i class='bx bx-info-circle'></i> About</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <main>
+            <div class="success-container">
+                <h2>Booking Successful!</h2>
+                <p>Thank you for your booking. Here are your details:</p>
+                <div class="booking-details" id="booking-details">
+                    <!-- Details will be populated here -->
+                </div>
+                <a href="index.html" class="back-button"><i class='bx bx-arrow-back'></i> Back to Home</a>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal Structure for Success Message -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span> <!-- Close button -->
+            <h2>Success!</h2>
+            <p>Your booking is successful!</p>
+        </div>
+    </div>
+
+    <script>
+        function displayBookingDetails() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const vehicle = urlParams.get('vehicle');
+            const image = urlParams.get('image');
+            const name = urlParams.get('name');
+            const phone = urlParams.get('phone');
+            
+            const pickupDrop = urlParams.get('pickup-drop');
+            const date = urlParams.get('date');
+            const time = urlParams.get('time');
+
+            const detailsContainer = document.getElementById('booking-details');
+            detailsContainer.innerHTML = `
+                <img src="${image}" alt="${vehicle}">
+                <p><strong>Vehicle:</strong> ${vehicle}</p>
+                <p><strong>Name:</strong> ${name}</p>
+                <p><strong>Phone:</strong> ${phone}</p>
+                <p><strong>Pick-Up/Drop Place:</strong> ${pickupDrop}</p>
+                <p><strong>Date:</strong> ${date}</p>
+                <p><strong>Time:</strong> ${time}</p>
+            `;
+        }
+
+        function showModal() {
+            const modal = document.getElementById("successModal");
+            modal.style.display = "block"; // Show the modal
+        }
+
+        window.onload = function() {
+            displayBookingDetails();
+            showModal(); // Show the modal on page load
+        };
+
+        // Close the modal when the user clicks on <span> (x)
+        document.querySelector('.close').onclick = function() {
+            document.getElementById("successModal").style.display = "none";
+        }
+
+        // Close the modal when the user clicks anywhere outside of the modal
+        window.onclick = function(event) {
+            const modal = document.getElementById("successModal");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

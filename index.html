@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <title>RideMe</title>
+</head>
+<body class="home-page">
+    <div class="wrapper">
+        <nav class="nav">
+            <div class="nav-logo">
+                <p>RIDEME.</p>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="index.html" class="link active"><i class='bx bx-home'></i> Home</a></li>
+                    <li><a href="vehicles.html" class="link"><i class='bx bx-edit'></i> Vehicles</a></li>
+                    <li><a href="bookings.html" class="link"><i class='bx bx-cog'></i> Bookings</a></li>
+                    <li><a href="about.html" class="link"><i class='bx bx-info-circle'></i> About</a></li>
+                    
+                </ul>
+            </div>
+            <div class="nav-button">
+                <button class="btn white-btn" id="logoutBtn" onclick="location.href='logout.php'">
+                    <i class='bx bx-log-out'></i> Logout
+                </button>
+            </div>
+        </nav>
+
+        <main>
+            <div class="quote">
+                <h1>Welcome to RideMe</h1>
+                <p>Your one-stop solution for vehicle booking.</p>
+                <blockquote>"Adventure awaits, let's ride!"</blockquote>
+            </div>
+        </main>
+    </div>
+
+    <style>
+        @media only screen and (max-width: 786px) {
+            .nav-button {
+                display: none; /* Hide button on small screens */
+            }
+        }
+    </style>
+</body>
+</html>

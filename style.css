@@ -1,0 +1,303 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+/* Existing logout button styling */
+#logoutBtn {
+    width: 130px; /* Set width */
+    height: 40px; /* Set height */
+    background: rgba(226, 11, 11, 0.8); /* Red background */
+    color: white; /* White text color */
+    font-weight: 600; /* Bold text */
+    border: none; /* No border */
+    border-radius: 30px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background 0.3s ease; /* Transition effect */
+    display: flex; /* Center icon and text */
+    align-items: center; /* Vertically center */
+    justify-content: center; /* Horizontally center */
+    margin-top: 40px; /* Increased margin to position the button lower */
+} 
+
+/* Optional: Adjust margin for .nav-menu ul li to align all items */
+.nav-menu ul li {
+    list-style-type: none;
+    margin: 0 10px; /* Adjust horizontal spacing between items */
+}
+
+/* Adjust hover effect for the logout button */
+#logoutBtn:hover {
+    background: rgba(226, 11, 11, 0.6); /* Darker red on hover */
+}
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body.home-page {
+    background: url("bike.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+body.booking-page {
+    background: url("bike.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+body.vehicles-page {
+    background: url("me.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* A simple light background for the vehicles page */
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    justify-content: flex-start; /* Align items to the top */
+    min-height: 100vh;
+}
+
+.nav {
+    background-color: #20dc3d; /* New dark background color */
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 100px; /* Maintain the height of the nav bar */
+    line-height: 100px;
+    background: linear-gradient(rgba(39, 39, 39, 0.8), rgba(39, 39, 39, 0.6)); /* Adjusted gradient */
+    z-index: 100; /* Keep the navbar above other elements */
+}
+
+
+.nav-logo p {
+    color: rgb(247, 251, 12);
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.nav-menu ul {
+    display: flex;
+}
+
+.nav-menu ul li {
+    list-style-type: none;
+}
+
+.nav-menu ul li .link {
+    text-decoration: none;
+    font-weight: 500;
+    color: #fff;
+    padding-bottom: 15px;
+    margin: 0 25px;
+}
+
+.link:hover,
+.active {
+    border-bottom: 2px solid #fff;
+}
+
+main {
+    position: relative; /* Allows absolute positioning of the quote */
+    margin-top: 120px; /* Add top margin to ensure content does not overlap with navbar */
+    padding: 20px; /* Add padding for better spacing */
+    text-align: center; /* Center the main content */
+}
+
+body.home-page main {
+    background-size: cover;
+    height: calc(100vh - 120px); /* Full height minus the navbar height */
+    color: white; /* Text color for contrast */
+}
+
+.quote {
+    position: absolute; /* Positioning the quote absolutely */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust position to the center */
+    z-index: 10; /* Ensure the quote is above the background */
+    color: #1f07f8;
+}
+
+.quote h1 {
+    font-size: 36px; /* Adjust as needed */
+    margin-bottom: 10px; /* Space between heading and paragraph */
+    color: #f6fe06;
+}
+
+.quote p {
+    font-size: 20px; /* Adjust as needed */
+    margin-bottom: 15px; /* Space between paragraph and blockquote */
+    color: #14f60c;
+}
+
+blockquote {
+    font-size: 24px; /* Adjust as needed */
+    font-style: italic; /* Italic style for the quote */
+    margin: 0; /* Reset default margins */
+    padding: 0; /* Reset default padding */
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Four columns */
+    gap: 20px; /* Space between images */
+    padding: 20px; /* Padding around the grid */
+    width: 100%; /* Full width for proper alignment */
+    max-width: 1200px; /* Maximum width of the grid */
+    margin: 0 auto; /* Center the grid */
+}
+
+.image-container {
+    text-align: center;
+    border: 4px solid; /* Border color will be set by nth-child */
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+    transition: border-color 0.3s, transform 0.3s;
+}
+
+.image-container:nth-child(odd) {
+    border-color: #FF5733; /* Orange for odd items */
+}
+
+.image-container:nth-child(even) {
+    border-color: #33C1FF; /* Blue for even items */
+}
+
+.image-container:hover {
+    transform: scale(1.05); /* Scale effect on hover */
+}
+
+.booking-image {
+    width: 100%; /* Full width of the container */
+    height: 200px; /* Fixed height for all images */
+    object-fit: cover; /* Maintain aspect ratio and cover area */
+    border-radius: 10px;
+    transition: transform 0.3s ease; /* Smooth transition on hover */
+}
+
+.booking-image:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+p {
+    margin: 10px 0 0;
+    font-size: 18px;
+    color: #333;
+    font-weight: 500; /* Bolder text for clarity */
+}
+
+/* Form Box */
+.form-box {
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent for better blend */
+    border-radius: 10px;
+    padding: 40px;
+    max-width: 500px;
+    margin: 40px auto; /* Centered on the page */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.booking-form-container header {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+/* Input Box Styles */
+.input-box {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 10px 40px; /* Space for icons */
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s; /* Transition for border color */
+}
+
+.input-box input:focus {
+    border-color: #ff6600; /* Highlight border on focus */
+    outline: none; /* Remove outline */
+}
+
+.input-box i {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #aaa;
+}
+
+/* Submit Button */
+.submit {
+    background-color: #ff6600;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.submit:hover {
+    background-color: #e55b00; /* Darker shade on hover */
+}
+
+/* Back Button */
+.back-button {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+    color: #ff6600;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.back-button:hover {
+    color: #e55b00; /* Darker shade on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .image-grid {
+        grid-template-columns: repeat(3, 1fr); /* Three columns for medium screens */
+    }
+
+    .booking-image {
+        height: 150px; /* Adjusted height for medium screens */
+    }
+
+    .form-box {
+        padding: 20px; /* Less padding on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .image-grid {
+        grid-template-columns: repeat(2, 1fr); /* Two columns for mobile */
+    }
+
+    .booking-image {
+        height: 120px; /* Smaller height for mobile */
+    }
+}
