@@ -16,7 +16,7 @@ This project, RideMe, is designed as a robust vehicle booking system inspired by
    This platform provides separate access for users and administrators. While users can book and track rides, administrators have the privilege to manage bookings, handle vehicle allocations, and oversee system operations.
 
 ### Dependencies and Technologies Required
-The QuickGo platform is developed using a tech stack aimed at building a scalable, interactive web application:
+The RideMe platform is developed using a tech stack aimed at building a scalable, interactive web application:
 - **Frontend:** HTML, CSS, and JavaScript for responsive and interactive UI.
 - **Backend:** PHP for server-side functionality, including database interaction.
 - **Database:** MySQL for storing and managing user data, bookings, vehicle availability, and transaction records.
@@ -40,7 +40,7 @@ The database stores essential information across tables, such as:
    - **APIs and Routing:** PHP scripts to handle form submissions, validate user details, and process bookings.
    - **Security Protocols:** Measures are implemented to ensure user data protection and transaction security.
 
-### QuickGo Benefits
+### RideMe Benefits
 - **Real-time Ride Tracking:** Enhances user convenience and satisfaction by offering live ride tracking.
 - **Efficient Resource Management:** Optimizes vehicle availability and booking distribution.
 - **Simplified Payments:** Secure, integrated payment processing enables smooth transactions.
